@@ -1,4 +1,5 @@
-代码参考该视频教程:https://www.youtube.com/watch?v=1MTyCvS05V4&t=14068s
+* 参考该视频教程:https://www.youtube.com/watch?v=1MTyCvS05V4&t=14068s
+* 代码参考该仓库：https://github.com/laoskey/auth-kit
 
 ***
 # 技术栈
