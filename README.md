@@ -41,7 +41,62 @@ bun dev
 | `prisma db push`           | 将修改的表结构推送到数据库。                                               |
 | `prisma studio`            | 启动本地数据库控制面板。                                                  |
 ***
-# 文件树
+
+# Next.js 项目文件结构分析
+
+### 整体结构
+这个 Next.js 项目是一个包含用户认证、权限管理和部分管理后台功能的应用。它使用了 NextAuth.js 进行用户认证，Prisma 作为 ORM，并采用了 Tailwind CSS 进行样式化。
+
+### 详细文件说明
+
+#### 根目录
+* **README.md:** 项目说明文档
+* **package.json:** 项目依赖配置文件
+* **next.config.js:** Next.js 配置文件
+* **tsconfig.json:** TypeScript 配置文件
+* **postcss.config.mjs:** PostCSS 配置文件
+* **tailwind.config.js:** Tailwind CSS 配置文件
+
+#### src 目录 (假设代码主要放在 src 目录下)
+* **components:**
+  * **ui:** 基础 UI 组件 (基于 Shadcn UI)
+  * **auth:** 认证相关组件 (登录表单、用户头像等)
+* **pages:**
+  * **auth:** 认证相关页面 (登录、注册、重置密码等)
+  * **dashboard:** 用户仪表盘
+  * **admin:** 管理员页面
+* **hooks:**
+  * **useCurrentUser.ts:** 获取当前用户信息
+* **lib:**
+  * **utils.ts:** 通用工具函数
+  * **api.ts:** 封装 API 请求
+* **styles:** 全局样式文件
+* **data:** 数据模型定义或接口
+
+#### 其他目录
+* **public:** 静态资源
+* **prisma:** Prisma ORM 配置
+* **actions:** 服务器端动作 (Next.js 13 中的新特性)
+
+### 详细分析
+
+* **components:** 组件库是项目的核心部分，提供了可复用的 UI 组件。
+* **pages:** 组织页面的目录，每个页面对应一个 .js 或 .tsx 文件。
+* **hooks:** 自定义 Hook 可以帮助你抽离组件中的逻辑，提高代码复用性。
+* **lib:** 工具函数库可以存放一些通用的工具函数，例如日期格式化、数据校验等。
+* **prisma:** Prisma ORM 用于与数据库交互，简化数据库操作。
+* **actions:** 在 Next.js 13 中，actions 可以用于处理服务器端的逻辑，例如数据获取、表单提交等。
+
+### 总结
+这个 Next.js 项目的结构清晰，代码组织合理。通过这种结构，可以有效地管理项目代码，提高开发效率。
+
+### 更多细节
+* **components/auth:** 包含登录表单、注册表单、忘记密码表单等组件。
+* **lib/api:** 封装了与后端 API 交互的函数，例如获取用户信息、更新用户信息等。
+
+**你可以根据你的项目需求，对这个 Markdown 文档进行进一步的定制和扩展。**
+
+## 文件树
 ```markdown
 ├── README.md  <!-- 项目文档，包含项目描述、安装和使用说明 -->
 ├── actions  <!-- 存放所有的服务端操作文件，通常是一些服务器行为函数，主要用于处理如登录、注册、密码重置等逻辑 -->
